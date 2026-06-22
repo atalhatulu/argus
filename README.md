@@ -1,52 +1,43 @@
-# 👁️ Argus: Temassız Arayüz Algılama Sistemi
+# 👁️ Argus: Temassız Yüz ve Göz İzleme Sistemi
 
-Argus, bilgisayar görüsü tabanlı gelişmiş bir temassız arayüz sistemidir. Projenin ilk fazında planlanan göz takibi (eye-tracking), performans ve kullanım kolaylığı (UX) açısından değerlendirilerek yerini çok daha stabil, yorulmayı önleyen ve akıcı olan **Sihirli El Kontrolüne (Hand Tracking)** bırakmıştır.
+Argus, bilgisayar görüsü tabanlı gelişmiş bir temassız arayüz sistemidir. Kontrol tamamen **yüzünüz ve gözlerinize** bırakılmıştır.
 
-Akıllı asistanımız **Dorina** ile birlikte geliştirilen bu sistem, standart bir web kamerasını fütüristik bir masaüstü kontrol merkezine dönüştürerek geleneksel donanımları (fare) devre dışı bırakır.
+Akıllı asistanınız **Dorina** ile birlikte geliştirilen bu sistem, baş hareketlerinizle farenizi yönlendirmenizi, göz kırpmalarınızla tıklama yapmanızı sağlar. Yeni "Tıklama Modu" sayesinde istenmeyen tıklamaların önüne geçilmiştir.
 
 ---
 
-## ✨ Öne Çıkan Özellikler (Sihirli Güncelleme)
+## ✨ Öne Çıkan Özellikler
 
-*   **İşaret Parmağı ile Navigasyon:** Sadece işaret parmağınızı ekrana doğru tutarak imleci doğal ve pürüzsüz bir şekilde yönlendirin. Gelişmiş Anti-Jitter filtresi ile titremeler engellenmiştir.
-*   **İmleç Dondurma Teknolojisi:** Tıklama hareketi yaparken imleç otomatik olarak donar. Böylece eliniz hareket etse bile hedefinizden sapmazsınız.
-*   **Keskin Tıklama Hareketleri (Tek El Kontrolü):**
-    *   **Sol Tık / Çift Tık:** Baş parmak ve İşaret parmağını birleştir (Çimdik).
-    *   **Sağ Tık:** Baş parmak ve Orta parmağı birleştir.
-    *   **Basılı Tut (Sürükle-Bırak):** Baş parmak ve Yüzük parmağını birleştir.
-*   **Mousepad Modu (Avuç Kapatma):** Elinizi yumruk yaptığınızda sistem "Relative" (Göreli) moda geçer. Eliniz ekranın neresinde olursa olsun bir laptop touchpad'i gibi çalışır. Tekrar yumruk yaparak tam ekran kontrolüne dönebilirsiniz.
-*   **Sihirli Jestler:**
-    *   **Sayfa Kaydırma (Scroll):** Elinizle 'V' işareti yapın (işaret ve orta parmak açık) ve elinizi aşağı yukarı hareket ettirin.
-    *   **Ses Kontrolü:** Sadece serçe parmağınızı havaya kaldırıp asansör gibi yukarı/aşağı indirin.
-    *   **Hızlı Geçiş (Swipe):** 5 parmağınız açıkken bileğinizi hızlıca sağa (Alt+Tab) veya sola (Masaüstü) savurun.
+*   **Burun ile Hassas Navigasyon:** Farenizin imlecini kafanızı hareket ettirerek yönlendirin. Ekranda gördüğünüz pembe çerçeve içinde burnunuzu hareket ettirdiğinizde imleç tüm ekranı kapsayacak şekilde pürüzsüzce hareket eder.
+*   **Akıllı Tıklama Modu (Çift Göz Kırpma):** 
+    *   Fare sürekli rastgele yerlere tıklamasın diye sistem başlangıçta "Sadece İzleme" modunda açılır.
+    *   Tıklama modunu **AÇMAK veya KAPATMAK** için iki gözünüzü aynı anda hızlıca iki kez (1 saniye içinde) açıp kapatın.
+*   **Göz Kırparak Tıklama (Tıklama Modu Açıkken):**
+    *   **Sol Tık:** Sol gözünüzü kırpın.
+    *   **Çift Tık:** Sol gözünüzü arka arkaya hızlıca iki kez kırpın (Aynı farenizdeki gibi tık-tık yapın).
+    *   **Sağ Tık:** Sağ gözünüzü kırpın.
+*   **Gerçek Zamanlı Göz Kapalılık (EAR) Oranları:** Ekranda (HUD) gözlerinizin açıklık/kapalılık durumu anlık float değeri olarak gösterilir.
+*   **Anti-Jitter ve Güvenlik:** Fare imlecinin titremesini önleyen EMA filtresi ve işler ters giderse fareyi ekranın köşesine çekerek sistemi anında kilitleyebileceğiniz FailSafe modu aktiftir.
 
 ## 🛠️ Teknik Altyapı
 
-*   **Yapay Zeka Asistanı:** Dorina Agent
-*   **Dil ve Kütüphaneler:** Python, OpenCV, Google MediaPipe (Hands), PyAutoGUI, Numpy
+*   **Yapay Zeka Asistanı:** Dorina
+*   **Dil ve Kütüphaneler:** Python, OpenCV, Google MediaPipe (Face Mesh), PyAutoGUI, Numpy
 
 ---
 
 ## 🚀 Başlangıç ve Kurulum
 
-1. Depoyu bilgisayarınıza klonlayın:
-   ```bash
-   git clone https://github.com/KULLANICI_ADINIZ/argus.git
-   cd argus
-   ```
-2. Python sanal ortamını oluşturun ve aktif edin:
+1. Python sanal ortamını oluşturun ve aktif edin:
    ```bash
    python -m venv venv
-   # Windows için:
    .\venv\Scripts\activate
    ```
-3. Gerekli kütüphaneleri yükleyin:
+2. Gerekli kütüphaneleri yükleyin:
    ```bash
    pip install opencv-python mediapipe pyautogui numpy
    ```
-4. Argus'u çalıştırın:
+3. Argus'u çalıştırın:
    ```bash
    python main.py
    ```
-
-*(Not: `venv` klasörü `.gitignore` dosyası ile Git takibinden izole edilmiştir, GitHub deponuzda yer kaplamaz.)*

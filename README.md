@@ -1,25 +1,52 @@
 # 👁️ Argus: Temassız Arayüz Algılama Sistemi
 
-Argus, bilgisayar görüsü tabanlı gelişmiş bir temassız arayüz sistemidir. Adını mitolojideki her şeyi gören devden alan Argus; gerçek zamanlı göz takibi ve sezgisel el hareketlerini işleyerek akıllı asistanımız **Dorina**'nın fiziksel dünyayla doğrudan etkileşime girmesini sağlar.
+Argus, bilgisayar görüsü tabanlı gelişmiş bir temassız arayüz sistemidir. Projenin ilk fazında planlanan göz takibi (eye-tracking), performans ve kullanım kolaylığı (UX) açısından değerlendirilerek yerini çok daha stabil, yorulmayı önleyen ve akıcı olan **Sihirli El Kontrolüne (Hand Tracking)** bırakmıştır.
 
-Geleneksel donanım kontrolcülerini (fare ve klavye) devre dışı bırakarak, standart bir web kamerasını fütüristik bir masaüstü kontrol merkezine dönüştürür.
+Akıllı asistanımız **Dorina** ile birlikte geliştirilen bu sistem, standart bir web kamerasını fütüristik bir masaüstü kontrol merkezine dönüştürerek geleneksel donanımları (fare) devre dışı bırakır.
 
 ---
 
-## ✨ Öne Çıkan Özellikler
+## ✨ Öne Çıkan Özellikler (Sihirli Güncelleme)
 
-*   **Bakış Tabanlı Navigasyon (Göz Takibi):** Sadece ekrandaki hedefinize bakarak imleci doğal ve akıcı bir şekilde yönlendirin.
-*   **Sezgisel Hareket Kontrolü:** Pencereleri küçültün, büyütün veya basit el hareketleriyle sürükleyip bırakın.
-*   **Göz Kırpma Aksiyonları:** Hassas göz kırpma algılama algoritması ile tıklama işlemlerini ve sistem komutlarını tetikleyin.
-*   **Akıllı Sinyal Filtreleme (Anti-Jitter):** Kamera piksellerindeki titremeyi engelleyen özel filtresi sayesinde pürüzsüz bir imleç deneyimi sunar.
+*   **İşaret Parmağı ile Navigasyon:** Sadece işaret parmağınızı ekrana doğru tutarak imleci doğal ve pürüzsüz bir şekilde yönlendirin. Gelişmiş Anti-Jitter filtresi ile titremeler engellenmiştir.
+*   **İmleç Dondurma Teknolojisi:** Tıklama hareketi yaparken imleç otomatik olarak donar. Böylece eliniz hareket etse bile hedefinizden sapmazsınız.
+*   **Keskin Tıklama Hareketleri (Tek El Kontrolü):**
+    *   **Sol Tık / Çift Tık:** Baş parmak ve İşaret parmağını birleştir (Çimdik).
+    *   **Sağ Tık:** Baş parmak ve Orta parmağı birleştir.
+    *   **Basılı Tut (Sürükle-Bırak):** Baş parmak ve Yüzük parmağını birleştir.
+*   **Mousepad Modu (Avuç Kapatma):** Elinizi yumruk yaptığınızda sistem "Relative" (Göreli) moda geçer. Eliniz ekranın neresinde olursa olsun bir laptop touchpad'i gibi çalışır. Tekrar yumruk yaparak tam ekran kontrolüne dönebilirsiniz.
+*   **Sihirli Jestler:**
+    *   **Sayfa Kaydırma (Scroll):** Elinizle 'V' işareti yapın (işaret ve orta parmak açık) ve elinizi aşağı yukarı hareket ettirin.
+    *   **Ses Kontrolü:** Sadece serçe parmağınızı havaya kaldırıp asansör gibi yukarı/aşağı indirin.
+    *   **Hızlı Geçiş (Swipe):** 5 parmağınız açıkken bileğinizi hızlıca sağa (Alt+Tab) veya sola (Masaüstü) savurun.
 
 ## 🛠️ Teknik Altyapı
 
-*   **Yapay Zeka Entegrasyonu:** Dorina Agent
-*   **Dil ve Kütüphaneler:** Python, OpenCV, Google MediaPipe, PyAutoGUI
+*   **Yapay Zeka Asistanı:** Dorina Agent
+*   **Dil ve Kütüphaneler:** Python, OpenCV, Google MediaPipe (Hands), PyAutoGUI, Numpy
 
 ---
 
-## 🚀 Başlangıç
+## 🚀 Başlangıç ve Kurulum
 
-*Argus şu anda aktif geliştirme aşamasındadır. İlk kod blokları ve kurulum rehberi yakında sisteme entegre edilecektir.*
+1. Depoyu bilgisayarınıza klonlayın:
+   ```bash
+   git clone https://github.com/KULLANICI_ADINIZ/argus.git
+   cd argus
+   ```
+2. Python sanal ortamını oluşturun ve aktif edin:
+   ```bash
+   python -m venv venv
+   # Windows için:
+   .\venv\Scripts\activate
+   ```
+3. Gerekli kütüphaneleri yükleyin:
+   ```bash
+   pip install opencv-python mediapipe pyautogui numpy
+   ```
+4. Argus'u çalıştırın:
+   ```bash
+   python main.py
+   ```
+
+*(Not: `venv` klasörü `.gitignore` dosyası ile Git takibinden izole edilmiştir, GitHub deponuzda yer kaplamaz.)*
